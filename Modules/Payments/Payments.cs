@@ -8,13 +8,13 @@ namespace Api.Modules.Payments
         private long?   _paymentId;
         private long?   _orderId;
         private string? _paymentType;
-        private string? _amount;
+        private decimal? _amount;
         private string? _status;
         private string? _paidAt;
 
         public Payment() { }
 
-        public Payment(long paymentId, long orderId, string paymentType, string amount, string status, string paidAt)
+        public Payment(long paymentId, long orderId, string paymentType, decimal amount, string status, string paidAt)
         {
             PaymentId       = paymentId;
             OrderId         = orderId;
@@ -50,9 +50,9 @@ namespace Api.Modules.Payments
 
         [JsonPropertyName("amount")]
         [JsonPropertyOrder(4)]
-        public string Amount
+        public decimal Amount
         {
-            get => _amount ?? string.Empty;
+            get => _amount ?? 0m;
             set => _amount = value;
         }
 

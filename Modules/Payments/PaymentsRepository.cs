@@ -26,7 +26,7 @@ namespace Api.Modules.Payments
                 PaymentId       = ReadValue(reader, "payment_id",       0L),
                 OrderId         = ReadValue(reader, "order_id",         0L),
                 PaymentType     = ReadValue(reader, "payment_type",     string.Empty),
-                Amount          = ReadValue(reader, "amount",           string.Empty),
+                Amount          = ReadValue(reader, "amount",           0m),
                 Status          = ReadValue(reader, "status",           string.Empty),
                 PaidAt          = ReadValue(reader, "paid_at",          string.Empty)
             };

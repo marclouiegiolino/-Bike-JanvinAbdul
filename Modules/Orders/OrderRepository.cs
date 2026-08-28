@@ -29,10 +29,10 @@ namespace Api.Modules.Orders
                 OrderId         = ReadValue(reader, "order_id",         0L),
                 UserId          = ReadValue(reader, "user_id",          0L),
                 ShippingAddress = ReadValue(reader, "shipping_address", string.Empty),
-                Subtotal        = ReadValue(reader, "subtotal",         "0"),
-                DiscountAmount  = ReadValue(reader, "discount_amount",  "0"),
-                ShippingFee     = ReadValue(reader, "shipping_fee",     "0"),
-                TotalAmount     = ReadValue(reader, "total_amount",     "0"),
+                Subtotal        = ReadValue(reader, "subtotal",         0m),
+                DiscountAmount  = ReadValue(reader, "discount_amount",  0m),
+                ShippingFee     = ReadValue(reader, "shipping_fee",     0m),
+                TotalAmount     = ReadValue(reader, "total_amount",     0m),
                 Status          = ReadValue(reader, "status",           string.Empty),
                 PlacedAt        = ReadValue(reader, "placed_at",        string.Empty)
             };

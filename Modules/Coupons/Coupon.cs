@@ -8,14 +8,14 @@ namespace Api.Modules.Coupons
         private long? _couponId;
         private string? _code;
         private string? _discountType;
-        private string? _discountValue;
+        private decimal? _discountValue;
         private string? _validFrom;
         private string? _validUntil;
         private bool? _isActive;
 
         public Coupon() { }
 
-        public Coupon(long couponId, string code, string discountType, string discountValue, string validFrom, string validUntil, bool isActive)
+        public Coupon(long couponId, string code, string discountType, decimal discountValue, string validFrom, string validUntil, bool isActive)
         {
             CouponId     = couponId;
             Code         = code;
@@ -52,10 +52,10 @@ namespace Api.Modules.Coupons
 
         [JsonPropertyName("discount_value")]
         [JsonPropertyOrder(4)]
-        public string DiscountValue
+        public decimal DiscountValue
         {
-            get => _discountValue ?? string.Empty;
-            set => _discountValue = NormalizeSpaces(value);
+            get => _discountValue ?? 0m;
+            set => _discountValue = value;
         }
 
         [JsonPropertyName("valid_from")]

@@ -7,15 +7,15 @@ namespace Api.Modules.OrderItems
     {
         private long?   _orderItemId;
         private long?   _orderId;
-        private long? _variantId;
-        private int? _quantity;
-        private string? _unitPrice;
-        private string? _subtotal;
+        private long?   _variantId;
+        private int?    _quantity;
+        private decimal?  _unitPrice;
+        private decimal?  _subtotal;
         
 
         public OrderItem() { }
 
-        public OrderItem(long orderItemId, long orderId, long variantId, int quantity, string unitPrice, string subtotal)
+        public OrderItem(long orderItemId, long orderId, long variantId, int quantity, decimal unitPrice, decimal subtotal)
         {
             OrderItemId = orderItemId;
             OrderId     = orderId;
@@ -59,18 +59,18 @@ namespace Api.Modules.OrderItems
 
         [JsonPropertyName("unit_price")]
         [JsonPropertyOrder(5)]
-        public string UnitPrice
+        public decimal UnitPrice
         {
-            get => _unitPrice ?? string.Empty;
-            set => _unitPrice = NormalizeSpaces(value);
+            get => _unitPrice ?? 0m;
+            set => _unitPrice = value;
         }
 
         [JsonPropertyName("subtotal")]
         [JsonPropertyOrder(6)]
-        public string Subtotal
+        public decimal Subtotal
         {
-            get => _subtotal ?? string.Empty;
-            set => _subtotal = NormalizeSpaces(value);
+            get => _subtotal ?? 0m;
+            set => _subtotal = value;
         }
         
 
@@ -89,8 +89,8 @@ namespace Api.Modules.OrderItems
             if (OrderItemId > 0 || other.OrderItemId > 0) return OrderItemId == other.OrderItemId;
             return OrderId == other.OrderId
                 && VariantId == other.VariantId
-                && string.Equals(UnitPrice, other.UnitPrice, StringComparison.OrdinalIgnoreCase)
-                && string.Equals(Subtotal, other.Subtotal, StringComparison.OrdinalIgnoreCase);
+                && UnitPrice == other.UnitPrice
+                && Subtotal == other.Subtotal;
         }
 
         public override bool Equals(object? obj) => Equals(obj as OrderItem);
@@ -98,7 +98,7 @@ namespace Api.Modules.OrderItems
         public override int GetHashCode()
         {
             if (OrderItemId > 0) return OrderItemId.GetHashCode();
-            return HashCode.Combine(OrderId, VariantId, UnitPrice?.ToLowerInvariant(), Subtotal?.ToLowerInvariant());
+            return HashCode.Combine(OrderId, VariantId, UnitPrice, Subtotal);
         }
     }
 }

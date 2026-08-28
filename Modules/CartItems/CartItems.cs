@@ -6,9 +6,9 @@ namespace Api.Modules.CartItems
     public sealed class CartItems : IEquatable<CartItems>
     {
         private long?   _cartItemId;
-        private long? _userId;
-        private long? _variantId;
-        private int? _quantity;
+        private long?   _userId;
+        private long?   _variantId;
+        private int?    _quantity;
         private string? _addedAt;
 
         public CartItems() { }

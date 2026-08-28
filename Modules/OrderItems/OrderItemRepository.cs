@@ -32,8 +32,8 @@ namespace Api.Modules.OrderItems
                 OrderId     = ReadValue(reader, "order_id",      0L),
                 VariantId   = ReadValue(reader, "variant_id",    0L),
                 Quantity    = ReadValue(reader, "quantity",      0),
-                UnitPrice   = ReadValue(reader, "unit_price",    string.Empty),
-                Subtotal    = ReadValue(reader, "subtotal",      string.Empty)
+                UnitPrice   = ReadValue(reader, "unit_price",    0m),
+                Subtotal    = ReadValue(reader, "subtotal",      0m)
             };
         }
 

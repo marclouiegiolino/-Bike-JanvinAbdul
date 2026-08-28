@@ -15,13 +15,13 @@ namespace Api.Modules.Coupons
         {
             return new Coupon
             {
-                CouponId     = ReadValue(reader, "coupon_id",     0L),
-                Code         = ReadValue(reader, "code",         string.Empty),
-                DiscountType = ReadValue(reader, "discount_type", string.Empty),
-                DiscountValue= ReadValue(reader, "discount_value",string.Empty),
-                ValidFrom    = ReadValue(reader, "valid_from",    string.Empty),
-                ValidUntil   = ReadValue(reader, "valid_until",   string.Empty),
-                IsActive     = ReadValue(reader, "is_active",     false)
+                CouponId      = ReadValue(reader, "coupon_id",      0L),
+                Code          = ReadValue(reader, "code",           string.Empty),
+                DiscountType  = ReadValue(reader, "discount_type",  string.Empty),
+                DiscountValue = ReadValue(reader, "discount_value", 0m),
+                ValidFrom     = ReadValue(reader, "valid_from",     string.Empty),
+                ValidUntil    = ReadValue(reader, "valid_until",    string.Empty),
+                IsActive      = ReadValue(reader, "is_active",      false)
             };
         }
 

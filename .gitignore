@@ -1,0 +1,61 @@
+## .NET Build Artifacts
+bin/
+obj/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Visual Studio files
+.vs/
+*.rsuser
+
+## Rider
+.idea/
+
+## VS Code
+.vscode/
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Publish
+*.pubxml
+*.publishproj
+
+## Sensitive / environment files
+*.env
+conn.env
+
+## SQLite databases (optional - remove if you want to track the DB)
+*.db
+*.db-shm
+*.db-wal
+
+## OS files
+.DS_Store
+Thumbs.db

@@ -5,20 +5,20 @@ namespace Api.Modules.Orders
 {
     public sealed class Order : IEquatable<Order>
     {
-        private long?   _orderId;
-        private long?   _userId;
-        private string? _shippingAddress;
-        private string? _subtotal;
-        private string? _discountAmount;
-        private string? _shippingFee;
-        private string? _totalAmount;
-        private string? _status;
-        private string? _placedAt;
+        private long?     _orderId;
+        private long?     _userId;
+        private string?   _shippingAddress;
+        private decimal?  _subtotal;
+        private decimal?  _discountAmount;
+        private decimal?  _shippingFee;
+        private decimal?  _totalAmount;
+        private string?   _status;
+        private string?   _placedAt;
 
         public Order() { }
 
-        public Order(long userId, string shippingAddress, string subtotal, string discountAmount,
-                       string shippingFee, string totalAmount, string status, string placedAt)
+        public Order(long userId, string shippingAddress, decimal subtotal, decimal discountAmount,
+                       decimal shippingFee, decimal totalAmount, string status, string placedAt)
         {
             UserId          = userId;
             ShippingAddress = shippingAddress;
@@ -56,33 +56,33 @@ namespace Api.Modules.Orders
 
         [JsonPropertyName("subtotal")]
         [JsonPropertyOrder(4)]
-        public string Subtotal
+        public decimal Subtotal
         {
-            get => _subtotal ?? string.Empty;
+            get => _subtotal ?? 0m;
             set => _subtotal = value;
         }
 
         [JsonPropertyName("discount_amount")]
         [JsonPropertyOrder(5)]
-        public string DiscountAmount
+        public decimal DiscountAmount
         {
-            get => _discountAmount ?? string.Empty;
+            get => _discountAmount ?? 0m;
             set => _discountAmount = value;
         }
 
         [JsonPropertyName("shipping_fee")]
         [JsonPropertyOrder(6)]
-        public string ShippingFee
+        public decimal ShippingFee
         {
-            get => _shippingFee ?? string.Empty;
+            get => _shippingFee ?? 0m;
             set => _shippingFee = value;
         }
 
         [JsonPropertyName("total_amount")]
         [JsonPropertyOrder(7)]
-        public string TotalAmount
+        public decimal TotalAmount
         {
-            get => _totalAmount ?? string.Empty;
+            get => _totalAmount ?? 0m;
             set => _totalAmount = value;
         }
 
